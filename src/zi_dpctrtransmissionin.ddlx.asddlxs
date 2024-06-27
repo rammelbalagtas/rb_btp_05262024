@@ -1,0 +1,127 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'DpctrTransmissionIn', 
+    typeNamePlural: 'DpctrTransmissionIns', 
+    title: {
+      type: #STANDARD, 
+      label: 'DPCTR - transmission information', 
+      value: 'TranId'
+    }
+  }
+}
+annotate view ZI_DpctrTransmissionIn with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'TranId'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'TranId'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_DpctrTransmissionIn', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'DPCTR - transmission information', 
+    position: 1 
+  } ]
+  TranId;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Simulation'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Simulation'
+  } ]
+  Simulation;
+  
+  @UI.identification: [ {
+    position: 3 , 
+    label: 'TranType'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 , 
+    label: 'TranType'
+  } ]
+  TranType;
+  
+  @UI.identification: [ {
+    position: 4 , 
+    label: 'TranDate'
+  } ]
+  @UI.lineItem: [ {
+    position: 4 , 
+    label: 'TranDate'
+  } ]
+  TranDate;
+  
+  @UI.identification: [ {
+    position: 5 , 
+    label: 'TranTime'
+  } ]
+  @UI.lineItem: [ {
+    position: 5 , 
+    label: 'TranTime'
+  } ]
+  TranTime;
+  
+  @UI.identification: [ {
+    position: 6 , 
+    label: 'TranStatus'
+  } ]
+  @UI.lineItem: [ {
+    position: 6 , 
+    label: 'TranStatus'
+  } ]
+  TranStatus;
+  
+  @UI.identification: [ {
+    position: 7 , 
+    label: 'TotRcdNo'
+  } ]
+  @UI.lineItem: [ {
+    position: 7 , 
+    label: 'TotRcdNo'
+  } ]
+  TotRcdNo;
+  
+  @UI.identification: [ {
+    position: 8 , 
+    label: 'CrtDate'
+  } ]
+  @UI.lineItem: [ {
+    position: 8 , 
+    label: 'CrtDate'
+  } ]
+  CrtDate;
+  
+  @UI.identification: [ {
+    position: 9 , 
+    label: 'CrtTime'
+  } ]
+  @UI.lineItem: [ {
+    position: 9 , 
+    label: 'CrtTime'
+  } ]
+  CrtTime;
+  
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'SelectionDate'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'SelectionDate'
+  } ]
+  SelectionDate;
+  
+  @UI.identification: [ {
+    position: 11 , 
+    label: 'SelectionMonth'
+  } ]
+  SelectionMonth;
+}

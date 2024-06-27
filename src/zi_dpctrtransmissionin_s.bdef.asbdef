@@ -1,0 +1,79 @@
+managed with additional save implementation in class ZBP_I_DPCTRTRANSMISSIONIN_S unique;
+strict;
+with draft;
+define behavior for ZI_DpctrTransmissionIn_S alias DpctrTransmissioAll
+draft table ZDPCTR_TRAN_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   SingletonID,
+   TransportRequestID;
+
+  field ( notrigger )
+   SingletonID,
+   HideTransport,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit with additional implementation;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _DpctrTransmissionIn { create ( features : instance ); with draft; }
+}
+
+define behavior for ZI_DpctrTransmissionIn alias DpctrTransmissionIn
+persistent table ZDPCTR_TRANH
+draft table ZDPCTR_TRANH_D
+lock dependent by _DpctrTransmissioAll
+authorization dependent by _DpctrTransmissioAll
+
+{
+  field ( mandatory : create )
+   TranId;
+
+  field ( readonly )
+   SingletonID,
+   CrtUser;
+
+  field ( readonly : update )
+   TranId;
+
+  field ( notrigger )
+   SingletonID,
+   CrtUser;
+
+
+  update( features : global );
+  delete( features : global );
+
+  mapping for ZDPCTR_TRANH
+  {
+    TranId = TRAN_ID;
+    Simulation = SIMULATION;
+    TranType = TRAN_TYPE;
+    TranDate = TRAN_DATE;
+    TranTime = TRAN_TIME;
+    TranStatus = TRAN_STATUS;
+    TotRcdNo = TOT_RCD_NO;
+    CrtDate = CRT_DATE;
+    CrtTime = CRT_TIME;
+    CrtUser = CRT_USER;
+    SelectionDate = SELECTION_DATE;
+    SelectionMonth = SELECTION_MONTH;
+  }
+
+  association _DpctrTransmissioAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

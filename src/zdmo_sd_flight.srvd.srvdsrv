@@ -1,0 +1,4 @@
+@EndUserText.label: 'ZDMO_SD_FLIGHT'
+define service ZDMO_SD_FLIGHT {
+  expose ZDMO_I_Flight_R;
+}

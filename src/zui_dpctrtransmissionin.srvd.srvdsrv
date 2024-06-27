@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZI_DpctrTransmissionIn_S'
+define service ZUI_DPCTRTRANSMISSIONIN {
+  expose ZI_DPCTRTRANSMISSIONIN_S as DpctrTransmissioAll;
+  expose ZI_DPCTRTRANSMISSIONIN as DpctrTransmissionIn;
+}

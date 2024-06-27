@@ -1,0 +1,4 @@
+@EndUserText.label: 'ZDMO_I_TRAVEL_U2'
+define service ZDMO_I_TRAVEL_U2 {
+  expose ZDMO_I_TRAVEL_UQ2;
+}

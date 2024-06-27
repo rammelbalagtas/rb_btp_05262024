@@ -1,0 +1,28 @@
+unmanaged implementation in class zbp_dmo_i_travel_uq2 unique;
+strict ( 2 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for ZDMO_I_TRAVEL_UQ2 //alias <alias_name>
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) Travel_ID;
+  association _Messages { create; }
+  action uploadExcelData  result [1] $self;
+}
+
+define behavior for ZDMO_I_MESSAGES //alias <alias_name>
+//late numbering
+lock dependent by _Travel
+authorization dependent by _Travel
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Travel_ID, Message_ID;
+  association _Travel;
+}

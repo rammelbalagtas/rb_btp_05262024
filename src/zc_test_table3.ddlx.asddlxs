@@ -1,0 +1,194 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'Id'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'Id'
+annotate view ZC_TEST_TABLE3 with
+{
+  @EndUserText.label: 'Id'
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'UUID'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'UUID'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  Id;
+  
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Destination'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    label: 'Destination'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  Destination;
+  
+  @EndUserText.label: 'Tranid'
+  @UI.identification: [ {
+    position: 30 
+  } ]
+  @UI.lineItem: [ {
+    position: 30 
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  Tranid;
+  
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Wahrheitswert'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 , 
+    label: 'Wahrheitswert'
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  Simulation;
+  
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'Message Type'
+  } ]
+  @UI.lineItem: [ {
+    position: 50 , 
+    label: 'Message Type'
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  Msgtype;
+  
+  @EndUserText.label: 'Extractdate'
+  @UI.identification: [ {
+    position: 60 
+  } ]
+  @UI.lineItem: [ {
+    position: 60 
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  Extractdate;
+  
+  @EndUserText.label: 'Extractweek'
+  @UI.identification: [ {
+    position: 70 
+  } ]
+  @UI.lineItem: [ {
+    position: 70 
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  Extractweek;
+  
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'Wahrheitswert'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 , 
+    label: 'Wahrheitswert'
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  MaterialHidden;
+  
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'Wahrheitswert'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 , 
+    label: 'Wahrheitswert'
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  PoHidden;
+  
+  @UI.identification: [ {
+    position: 100 , 
+    label: 'Created By'
+  } ]
+  @UI.lineItem: [ {
+    position: 100 , 
+    label: 'Created By'
+  } ]
+  @UI.selectionField: [ {
+    position: 100 
+  } ]
+  CreatedBy;
+  
+  @UI.identification: [ {
+    position: 110 , 
+    label: 'Created On'
+  } ]
+  @UI.lineItem: [ {
+    position: 110 , 
+    label: 'Created On'
+  } ]
+  @UI.selectionField: [ {
+    position: 110 
+  } ]
+  CreatedAt;
+  
+  @UI.identification: [ {
+    position: 120 , 
+    label: 'Changed By'
+  } ]
+  @UI.lineItem: [ {
+    position: 120 , 
+    label: 'Changed By'
+  } ]
+  @UI.selectionField: [ {
+    position: 120 
+  } ]
+  LocalLastChangedBy;
+  
+  @UI.identification: [ {
+    position: 130 , 
+    label: 'Changed On'
+  } ]
+  @UI.lineItem: [ {
+    position: 130 , 
+    label: 'Changed On'
+  } ]
+  @UI.selectionField: [ {
+    position: 130 
+  } ]
+  LocalLastChangedAt;
+  
+  @UI.identification: [ {
+    position: 140 , 
+    label: 'Changed On'
+  } ]
+  @UI.lineItem: [ {
+    position: 140 , 
+    label: 'Changed On'
+  } ]
+  @UI.selectionField: [ {
+    position: 140 
+  } ]
+  LastChangedAt;
+}

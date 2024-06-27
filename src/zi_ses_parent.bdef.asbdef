@@ -1,0 +1,57 @@
+managed implementation in class zbp_i_ses_parent unique;
+strict;
+with draft;
+
+define behavior for zi_ses_parent alias File
+with additional save
+persistent table zses_file_table2
+lock master
+total etag end_user
+draft table zses_file_tabled
+authorization master ( instance )
+etag master end_user
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) end_user;
+  // Logic to convert uploaded excel into internal table and save to the child entity is written here
+  action ( features : instance ) uploadExcelData result [1] $self;
+
+  association _ses_excel { create; with draft; }
+  // Logic to trigger action uploadExcelData
+  determination fields on modify { field Filename ; }
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare ;
+
+  mapping for zses_file_table2 corresponding {
+    End_User = end_user;
+    Status = status;
+    Attachment = attachment;
+    MimeType = mimetype;
+    Filename = filename;
+    LocalCreatedBy = Local_Created_By;
+    LocalCreatedAt = local_created_at;
+    LocalLastChangedBy = local_last_changed_by;
+    LocalLastChangedAt = local_last_changed_at;
+    LastChangedAt = last_changed_at;
+  }
+
+}
+define behavior for zi_ses_excel_data alias ExcelData
+persistent table ZSES_DB
+lock dependent by _ses_file
+draft table zses_dbd
+authorization dependent by _ses_file
+etag master end_user
+{
+  update;
+  delete;
+  field ( readonly ) end_user, ebeln, entrysheet, ebelp;
+  association _ses_file { with draft; }
+  // Logic to process the uploaded data from excel
+  action createSES result [1] $self;
+}

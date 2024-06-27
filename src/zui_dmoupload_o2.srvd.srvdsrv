@@ -1,0 +1,4 @@
+@EndUserText.label: 'ZUI_DMOUPLOAD_O2'
+define service ZUI_DMOUPLOAD_O2 {
+  expose ZC_DMOUPLOAD;
+}

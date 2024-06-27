@@ -1,0 +1,5 @@
+@EndUserText.label: 'ZDMO_C_UPLOAD'
+define service ZDMO_C_UPLOAD {
+  expose zdmo_c_upload;
+  expose ZDMO_I_MESSAGES2;
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Z_SD_SIGNATURE_READ'
+define service Z_SD_SIGNATURE_READ {
+  expose Z_C_SIGNATURE_MAINTAIN;
+}

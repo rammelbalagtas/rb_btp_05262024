@@ -1,0 +1,30 @@
+projection;
+strict;
+use draft;
+
+define behavior for zc_ses_parent //alias <alias_name>
+{
+  use create;
+  use update;
+//  use delete;
+
+  use action uploadExcelData;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+
+  use association _ses_excel { create; with draft; }
+}
+
+define behavior for zc_ses_excel //alias <alias_name>
+{
+  use update;
+//  use delete;
+
+//  use action createSES;
+
+  use association _ses_file { with draft; }
+}

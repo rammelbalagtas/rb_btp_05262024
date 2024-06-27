@@ -1,0 +1,39 @@
+@Metadata.layer: #CORE
+annotate entity zc_ses_parent2 with
+{
+  @UI.facet: [
+      /* Header Fecets and Datapoints */
+      { purpose: #HEADER,             id:'HDR_USER',        type: #DATAPOINT_REFERENCE,      position: 10, targetQualifier: 'end_user'                                             },
+      { purpose: #HEADER,             id:'HDR_FILE',        type: #DATAPOINT_REFERENCE,      position: 20, targetQualifier: 'Local_Last_Changed_At'                                },
+      { purpose: #HEADER,             id:'HDR_STATUS',      type: #DATAPOINT_REFERENCE,      position: 30, targetQualifier: 'status'                                               },
+  //**----  Body facets
+      { label: 'File Information',    id: 'Attachment',     type: #COLLECTION,               position: 10                                                                        },
+      { label: 'Invoice Details',     id: 'Invoicedet',     type: #IDENTIFICATION_REFERENCE, position: 10,                             parentId: 'File',        purpose: #STANDARD },
+      {                               id: 'Upload',         type: #FIELDGROUP_REFERENCE,     position: 20  ,targetQualifier: 'Upload', parentId: 'Attachment',  purpose: #STANDARD },
+
+  //** --- Excel data Facet **
+      { label: 'Excel Data',          id: 'Data',           type: #LINEITEM_REFERENCE,       position: 30,  targetElement: '_ses_excel', parentId: 'Attachment', purpose: #STANDARD } ]// , hidden: #(HideExcel) } ]
+
+
+  @UI: { lineItem:       [ { position: 10, importance: #HIGH , label: 'Person Responsible'}  ] ,
+         identification: [ { position: 10 , label: 'Person Responsible' } ],
+                     //      { type: #FOR_ACTION, dataAction: 'uploadExcelData', label: 'Validate and Show' } ] ,
+         dataPoint:        { title: 'Responsible Person', targetValueElement: 'end_user' } }
+  end_user;
+  @UI: { lineItem:       [ { position: 20, importance: #HIGH , label: 'Processing Status'} ] ,
+         identification: [ { position: 20 , label: 'Processing Status' } ] ,
+         dataPoint:        { title: 'Processing Status', targetValueElement: 'status' ,criticality: 'CriticalityStatus' ,criticalityRepresentation: #WITHOUT_ICON} }
+  status;
+  @UI: { fieldGroup:     [ { position: 50, qualifier: 'Upload' , label: 'Attachment'} ]}
+  @UI: { identification: [ { position: 30 , label: 'File' } ] }
+  Attachment;
+
+  @UI.hidden: true
+  MimeType;
+
+  @UI.hidden: true
+  Filename;
+  @UI: { dataPoint:{ title: 'Last Action On', targetValueElement: 'Local_Last_Changed_At' } }
+  Local_Last_Changed_At;
+
+}

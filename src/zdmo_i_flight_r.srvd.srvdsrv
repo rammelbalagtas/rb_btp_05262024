@@ -1,0 +1,4 @@
+@EndUserText.label: 'ZDMO_I_Flight_R'
+define service ZDMO_I_Flight_R {
+  expose /DMO/I_Flight_R;
+}

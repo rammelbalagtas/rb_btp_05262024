@@ -1,0 +1,5 @@
+CLASS zbp_dmo_i_flight_r DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zdmo_i_flight_r.
+ENDCLASS.
+
+CLASS zbp_dmo_i_flight_r IMPLEMENTATION.
+ENDCLASS.

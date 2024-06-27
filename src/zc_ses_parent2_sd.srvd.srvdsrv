@@ -1,0 +1,5 @@
+@EndUserText.label: 'ZC_SES_PARENT2_SD'
+define service ZC_SES_PARENT2_SD {
+  expose zc_ses_parent2;
+  expose zc_ses_excel2;
+}

@@ -1,0 +1,48 @@
+@Metadata.layer: #CORE
+annotate entity zc_ses_excel2 with
+{
+
+  @UI.facet: [{
+      id: 'SES',
+      type: #FIELDGROUP_REFERENCE,
+      purpose: #STANDARD,
+      label: 'SES',
+      targetQualifier: 'SESDetails'
+   }]
+  @UI.lineItem: [{ position: 1 }]
+  end_user;
+  @UI.lineItem: [{ position: 10 , label: 'SES Number', invocationGrouping: #ISOLATED },
+  { type: #FOR_ACTION, dataAction: 'createSES', label: 'Process SES' }]
+  @UI.fieldGroup: [{ position: 10 , label: 'SES Number', qualifier: 'SESDetails' }]
+  Entrysheet;
+  @UI.lineItem: [{ position: 20 , label: 'PO' }]
+  @UI.fieldGroup: [{ position: 20 , label: 'PO', qualifier: 'SESDetails' }]
+  Ebeln;
+  @UI.lineItem: [{ position: 30 , label: 'PO Item' }]
+  @UI.fieldGroup: [{ position: 30 , label: 'PO Item', qualifier: 'SESDetails' }]
+  Ebelp;
+  @UI.lineItem: [{ position: 40 , label: 'SES Name' }]
+  @UI.fieldGroup: [{ position: 40 , label: 'SES Name', qualifier: 'SESDetails' }]
+  Ext_Number;
+//  @UI.lineItem: [{ position: 50 , label: 'Valid From' }]
+//  @UI.fieldGroup: [{ position: 50 , label: 'Valid From', qualifier: 'SESDetails' }]
+//  Begdate;
+//  @UI.lineItem: [{ position: 60 , label: 'Valid To' }]
+//  @UI.fieldGroup: [{ position: 60 , label: 'Valid To', qualifier: 'SESDetails' }]
+//  Enddate;
+  @UI.lineItem: [{ position: 70 , label: 'Quantity' }]
+  @UI.fieldGroup: [{ position: 70 , label: 'Quantity', qualifier: 'SESDetails' }]
+  Quantity;
+  @UI.lineItem: [{ position: 80 , label: 'UOM' }]
+  @UI.fieldGroup: [{ position: 80 , label: 'UOM', qualifier: 'SESDetails' }]
+  Base_Uom;
+  @UI.lineItem: [{ position: 90 , label: 'Final Entry' }]
+  @UI.fieldGroup: [{ position: 90 , label: 'Final Entry', qualifier: 'SESDetails' }]
+  Fin_Entry;
+  @UI.lineItem: [{ position: 100 , label: 'Error' , hidden: true}]
+  @UI.fieldGroup: [{ position: 100 , label: 'Error' , hidden: true}]
+  Error;
+  @UI.lineItem: [{ position: 110 , label: 'Error Message' }]
+  @UI.fieldGroup: [{ position: 110 , label: 'Error Message', qualifier: 'SESDetails' }]
+  Error_Message;
+}

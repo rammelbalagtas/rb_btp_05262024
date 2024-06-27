@@ -1,0 +1,4 @@
+@EndUserText.label: 'Z_QUERY_FLIGHTBOOKINGS2'
+define service Z_QUERY_FLIGHTBOOKINGS2 {
+  expose Z_Query_FlightBookings2;
+}

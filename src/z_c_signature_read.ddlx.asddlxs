@@ -1,0 +1,41 @@
+@Metadata.layer: #CUSTOMER
+annotate view Z_C_SIGNATURE_MAINTAIN
+    with 
+{
+//    @UI.facet: [
+//           {
+//               label: 'Signature',
+//               id : 'Signature',
+//               purpose: #STANDARD,
+//               type : #IDENTIFICATION_REFERENCE,
+//               position: 10,
+//               targetQualifier: 'Signature'
+//           }]
+    @EndUserText.label: 'Organisation (O)'
+    @UI.selectionField: [{ position: 10 }]
+    @UI.lineItem: [{ position: 10 }, { type: #FOR_ACTION, dataAction: 'sendMail', label: 'send email' }]
+//    @UI.identification: [{ position: 10, qualifier: 'Signature' }]
+    Organisation;
+    @EndUserText.label: 'Position (S)'
+    @UI.selectionField: [{ position: 20 }]
+    @UI.lineItem: [{ position: 20 }]
+//    @UI.identification: [{ position: 20, qualifier: 'Signature' }]
+    Pos;
+    @EndUserText.label: 'User (US)'
+    @UI.selectionField: [{ position: 30 }]
+    @UI.lineItem: [{ position: 30 }]
+//    @UI.identification: [{ position: 30, qualifier: 'Signature' }]
+    Username;   
+    @EndUserText.label: 'Column 1'
+    @UI.selectionField: [{ position: 40 }]
+    @UI.lineItem: [{ position: 40 }]
+    Col1;   
+    @EndUserText.label: 'Column 2'
+    @UI.selectionField: [{ position: 50 }]
+    @UI.lineItem: [{ position: 50 }]
+    Col2;  
+    @EndUserText.label: 'Count'
+    @UI.selectionField: [{ position: 60 }]
+    @UI.lineItem: [{ position: 60 }]
+    Count1;   
+}

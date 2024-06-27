@@ -1,0 +1,57 @@
+managed implementation in class ZBP_R_TEST_WIZARD unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_TEST_WIZARD alias TestTable
+persistent table ZTEST_WIZARD
+draft table ZTEST_WIZARD_D
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+
+{
+  field ( readonly )
+   Id,
+   CreatedBy,
+   CreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( numbering : managed )
+   Id;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZTEST_WIZARD
+  {
+    Id = id;
+    CustomerId = customer_id;
+    MandatoryField = mandatory_field;
+    OptionalField1 = optional_field1;
+    OptionalField2 = optional_field2;
+    OptionalField3 = optional_field3;
+    DateField = date_field;
+    TimeField = time_field;
+    Timestamp = timestamp;
+    Email = email;
+    AppServerPath = app_server_path;
+    StringText = string_text;
+    IntegerValue = integer_value;
+    TypeDecAmount = type_dec_amount;
+    TypeRawstring = type_rawstring;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LocalLastChangedBy = local_last_changed_by;
+    LocalLastChangedAt = local_last_changed_at;
+    LastChangedAt = last_changed_at;
+  }
+}

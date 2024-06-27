@@ -1,0 +1,4 @@
+@EndUserText.label: 'ZDT187v_XX_Flight_Query'
+define service ZDT187v_XX_Flight_Query {
+  expose ZDT187v_XX_Flight_Query;
+}

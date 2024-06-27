@@ -1,0 +1,70 @@
+@Metadata.layer: #CORE
+annotate entity zdmo_c_upload
+    with 
+{
+        @UI.facet: [
+        { id:     'Travel',
+        purpose:  #STANDARD,
+        type:     #IDENTIFICATION_REFERENCE,
+        label:    'Travel',
+        position: 10 }, 
+      {
+          id         : 'Output',
+          purpose    : #STANDARD,
+          position   : 20,
+          label      : 'Output',
+          type       :  #LINEITEM_REFERENCE,
+          targetElement: '_Messages'
+      }]
+      
+      
+      
+//        @UI.facet: [    {
+//                label: 'General',
+//                id: 'General',
+//                type: #COLLECTION,
+//                position: 10
+//                },
+//                     { id:            'Travel',
+//                    purpose:       #STANDARD,
+//                    type:          #IDENTIFICATION_REFERENCE,
+//                    label:         'Travel',
+//                    parentId: 'General',
+//                    position:      10 },
+//                  {
+//                      id: 'Upload',
+//                      purpose: #STANDARD,
+//                      type: #FIELDGROUP_REFERENCE,
+//                      parentId: 'General',
+//                      label: 'Upload',
+//                      position: 20,
+//                      targetQualifier: 'Upload'
+//                  } ]
+//        
+     @UI: { lineItem:    [ { position: 10, label: 'Travel ID'
+                             } ],
+           identification: [ { position: 10 , label: 'Travel ID' } ],
+         selectionField: [ { position: 10 } ] }
+     Travel_Id;
+     @UI: { lineItem:    [ { position: 20, label: 'Agency'
+                             } ],
+            identification: [ { position: 20 , label: 'Agency ID' } ],
+         selectionField: [ { position: 20 } ] }
+      Agency_Id;
+      
+                 @UI: { lineItem:    [ { position: 30, label: 'Customer'
+                             } ],
+         identification: [ { position: 30 , label: 'Customer' } ],
+         selectionField: [ { position: 30 } ] }
+      Customer_Id;
+
+           @UI.identification: [ { position: 50 , label: 'Upload File' } ] 
+      Attachment;                                                                                   
+      @UI.hidden: true
+      Mimetype ;
+      @UI.hidden: true
+      Filename;
+      
+
+    
+}

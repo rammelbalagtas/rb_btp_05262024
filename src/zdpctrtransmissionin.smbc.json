@@ -1,0 +1,35 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Maintain DPCTR - transmission information",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "serviceConfiguration": {
+    "serviceBinding": "ZUI_DPCTRTRANSMISSIONIN_O4",
+    "serviceName": "ZUI_DPCTRTRANSMISSIONIN_O4",
+    "serviceVersion": "0001",
+    "rootEntitySet": "DpctrTransmissioAll",
+    "name": "DPCTR - transmission information",
+    "configurationGroup": "",
+    "skipRootEntity": true
+  },
+  "appConfiguration": {
+    "listReport": {
+      "initialLoad": "disabled"
+    },
+    "objectPages": [
+      {
+        "entitySet": "DpctrTransmissioAll",
+        "variantManagement": "control"
+      }
+    ],
+    "tableSettings": [
+      {
+        "entitySet": "DpctrTransmissionIn",
+        "rowCountMode": "auto",
+        "frozenColumnCount": 1
+      }
+    ]
+  }
+}

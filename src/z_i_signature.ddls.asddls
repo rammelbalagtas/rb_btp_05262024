@@ -7,5 +7,7 @@ define root view entity Z_I_SIGNATURE as select from zsignature
     key username as Username,
     col1 as Col1,
     col2 as Col2,
+    @Aggregation.default: #SUM
+    count1 as Count1,
     signature as Signature
 }

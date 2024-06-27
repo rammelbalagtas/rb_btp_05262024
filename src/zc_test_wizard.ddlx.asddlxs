@@ -1,0 +1,263 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'Id'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'Id'
+annotate view ZC_TEST_WIZARD with
+{
+  @EndUserText.label: 'Id'
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'UUID'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'UUID'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  Id;
+  
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Customer ID'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    label: 'Customer ID'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  CustomerId;
+  
+  @EndUserText.label: 'Mandatory Field'
+  @UI.identification: [ {
+    position: 30 
+  } ]
+  @UI.lineItem: [ {
+    position: 30 
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  MandatoryField;
+  
+  @EndUserText.label: 'Optional Field1'
+  @UI.identification: [ {
+    position: 40 
+  } ]
+  @UI.lineItem: [ {
+    position: 40 
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  OptionalField1;
+  
+  @EndUserText.label: 'Optional Field2'
+  @UI.identification: [ {
+    position: 50 
+  } ]
+  @UI.lineItem: [ {
+    position: 50 
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  OptionalField2;
+  
+  @EndUserText.label: 'Optional Field3'
+  @UI.identification: [ {
+    position: 60 
+  } ]
+  @UI.lineItem: [ {
+    position: 60 
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  OptionalField3;
+  
+  @EndUserText.label: 'Date Field'
+  @UI.identification: [ {
+    position: 70 
+  } ]
+  @UI.lineItem: [ {
+    position: 70 
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  DateField;
+  
+  @EndUserText.label: 'Time Field'
+  @UI.identification: [ {
+    position: 80 
+  } ]
+  @UI.lineItem: [ {
+    position: 80 
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  TimeField;
+  
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'Zeitstempel'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 , 
+    label: 'Zeitstempel'
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  Timestamp;
+  
+  @EndUserText.label: 'Email'
+  @UI.identification: [ {
+    position: 100 
+  } ]
+  @UI.lineItem: [ {
+    position: 100 
+  } ]
+  @UI.selectionField: [ {
+    position: 100 
+  } ]
+  Email;
+  
+  @EndUserText.label: 'App Server Path'
+  @UI.identification: [ {
+    position: 110 
+  } ]
+  @UI.lineItem: [ {
+    position: 110 
+  } ]
+  @UI.selectionField: [ {
+    position: 110 
+  } ]
+  AppServerPath;
+  
+  @EndUserText.label: 'String Text'
+  @UI.identification: [ {
+    position: 120 
+  } ]
+  @UI.lineItem: [ {
+    position: 120 
+  } ]
+  @UI.selectionField: [ {
+    position: 120 
+  } ]
+  StringText;
+  
+  @EndUserText.label: 'Integer Value'
+  @UI.identification: [ {
+    position: 130 
+  } ]
+  @UI.lineItem: [ {
+    position: 130 
+  } ]
+  @UI.selectionField: [ {
+    position: 130 
+  } ]
+  IntegerValue;
+  
+  @EndUserText.label: 'Type Dec Amount'
+  @UI.identification: [ {
+    position: 140 
+  } ]
+  @UI.lineItem: [ {
+    position: 140 
+  } ]
+  @UI.selectionField: [ {
+    position: 140 
+  } ]
+  TypeDecAmount;
+  
+  @EndUserText.label: 'Type Rawstring'
+  @UI.identification: [ {
+    position: 150 
+  } ]
+  @UI.lineItem: [ {
+    position: 150 
+  } ]
+  @UI.selectionField: [ {
+    position: 150 
+  } ]
+  TypeRawstring;
+  
+  @UI.identification: [ {
+    position: 160 , 
+    label: 'Created By'
+  } ]
+  @UI.lineItem: [ {
+    position: 160 , 
+    label: 'Created By'
+  } ]
+  @UI.selectionField: [ {
+    position: 160 
+  } ]
+  CreatedBy;
+  
+  @UI.identification: [ {
+    position: 170 , 
+    label: 'Created On'
+  } ]
+  @UI.lineItem: [ {
+    position: 170 , 
+    label: 'Created On'
+  } ]
+  @UI.selectionField: [ {
+    position: 170 
+  } ]
+  CreatedAt;
+  
+  @UI.identification: [ {
+    position: 180 , 
+    label: 'Changed By'
+  } ]
+  @UI.lineItem: [ {
+    position: 180 , 
+    label: 'Changed By'
+  } ]
+  @UI.selectionField: [ {
+    position: 180 
+  } ]
+  LocalLastChangedBy;
+  
+  @UI.identification: [ {
+    position: 190 , 
+    label: 'Changed On'
+  } ]
+  @UI.lineItem: [ {
+    position: 190 , 
+    label: 'Changed On'
+  } ]
+  @UI.selectionField: [ {
+    position: 190 
+  } ]
+  LocalLastChangedAt;
+  
+  @UI.identification: [ {
+    position: 200 , 
+    label: 'Changed On'
+  } ]
+  @UI.lineItem: [ {
+    position: 200 , 
+    label: 'Changed On'
+  } ]
+  @UI.selectionField: [ {
+    position: 200 
+  } ]
+  LastChangedAt;
+}

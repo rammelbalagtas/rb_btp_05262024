@@ -1,0 +1,27 @@
+unmanaged implementation in class zbp_dmo_i_upload unique;
+strict ( 2 );
+
+define behavior for zdmo_i_upload //alias <alias_name>
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) Travel_Id;
+  association _Messages { create; }
+}
+
+define behavior for ZDMO_I_MESSAGES2 //alias <alias_name>
+//late numbering
+lock dependent by _Travel
+authorization dependent by _Travel
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Travel_ID, Message_ID;
+  association _Travel;
+}

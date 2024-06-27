@@ -1,0 +1,17 @@
+projection implementation in class ZBP_C_TEST_TABLE2 unique;
+strict ( 2 );
+use draft;
+define behavior for ZC_TEST_TABLE2 alias ZcTestTable2
+use etag
+
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+}

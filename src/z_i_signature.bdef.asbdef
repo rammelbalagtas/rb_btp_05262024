@@ -1,0 +1,15 @@
+managed implementation in class zbp_i_signature unique;
+strict ( 2 );
+
+define behavior for Z_I_SIGNATURE alias Signature
+persistent table zsignature
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) Organisation, Pos, Username;
+  action sendMail;
+}

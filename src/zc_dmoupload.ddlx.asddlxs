@@ -1,0 +1,89 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'TravelId'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'TravelId'
+annotate view ZC_DMOUPLOAD with
+{
+  @EndUserText.label: 'Travel Id'
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 10 
+  } ]
+  @UI.lineItem: [ {
+    position: 10 
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  TravelId;
+  
+  @EndUserText.label: 'Agency Id'
+  @UI.identification: [ {
+    position: 20 
+  } ]
+  @UI.lineItem: [ {
+    position: 20 
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  AgencyId;
+  
+  @EndUserText.label: 'Customer Id'
+  @UI.identification: [ {
+    position: 30 
+  } ]
+  @UI.lineItem: [ {
+    position: 30 
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  CustomerId;
+  
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Attachment'
+  } ]
+  Attachment;
+  
+ @UI.hidden: true
+  Mimetype;
+  
+  @UI.hidden: true
+  Filename;
+  
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'Download file'
+  } ]
+  downloadFile;
+  
+  @UI.hidden: true
+  downloadMimeType;
+  
+  @UI.hidden: true
+  downloadFileName;
+  
+  @UI.hidden: true
+  CreatedBy;
+  
+  @UI.hidden: true
+  CreatedAt;
+  
+  @UI.hidden: true
+  LocalLastChangedBy;
+  
+  @UI.hidden: true
+  LocalLastChangedAt;
+  
+  @UI.hidden: true
+  LastChangedAt;
+}

@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_TEST_TABLE3'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_TEST_TABLE3'
+  }
+}
+define service ZUI_TEST_TABLE3_O4 provider contracts odata_v4_ui {
+  expose ZC_TEST_TABLE3 as Transmission;
+}

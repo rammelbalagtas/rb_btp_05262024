@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_TEST_WIZARD'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_TEST_WIZARD'
+  }
+}
+define service ZUI_TEST_WIZARD_O4 provider contracts odata_v4_ui {
+  expose ZC_TEST_WIZARD as TestTable;
+}

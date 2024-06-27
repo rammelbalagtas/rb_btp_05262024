@@ -1,0 +1,6 @@
+@EndUserText: {label: 'Service Definition for ZC_DMOUPLOAD'}
+@ObjectModel: {leadingEntity: {name: 'ZC_DMOUPLOAD'}}
+define service ZUI_DMOUPLOAD_O4
+  provider contracts odata_v4_ui {
+  expose ZC_DMOUPLOAD as Upload;
+}

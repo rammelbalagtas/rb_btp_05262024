@@ -1,0 +1,5 @@
+CLASS zbp_dmo_i_travel_uq4 DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zdmo_i_travel_uq4.
+ENDCLASS.
+
+CLASS zbp_dmo_i_travel_uq4 IMPLEMENTATION.
+ENDCLASS.

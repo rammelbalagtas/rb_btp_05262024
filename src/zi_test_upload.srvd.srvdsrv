@@ -1,0 +1,4 @@
+@EndUserText.label: 'ZI_TEST_UPLOAD'
+define service ZI_TEST_UPLOAD {
+  expose ZI_TEST_UPLOAD;
+}
