@@ -1,0 +1,47 @@
+managed implementation in class ZBP_R_FIORIMAINT2 unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_FIORIMAINT2 alias ZrFiorimaint2
+persistent table ZFIORIMAINT2
+draft table ZFIORIMAINT2_D
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   ProcessKey;
+
+  field ( readonly )
+   LocalCreatedBy,
+   LocalCreatedAt,
+   LocalLastChangedBy,
+   LocalLastChangedAt,
+   LastChangedAt;
+
+  field ( readonly : update )
+   ProcessKey;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZFIORIMAINT2
+  {
+    ProcessKey = process_key;
+    ScriptId = script_id;
+    ProcessDesc = process_desc;
+    LocalCreatedBy = local_created_by;
+    LocalCreatedAt = local_created_at;
+    LocalLastChangedBy = local_last_changed_by;
+    LocalLastChangedAt = local_last_changed_at;
+    LastChangedAt = last_changed_at;
+  }
+}

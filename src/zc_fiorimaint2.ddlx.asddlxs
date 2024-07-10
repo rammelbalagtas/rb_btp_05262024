@@ -1,0 +1,116 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'ProcessKey'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'ProcessKey'
+annotate view ZC_FIORIMAINT2 with
+{
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'Process Key'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'Process Key'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  ProcessKey;
+  
+  @EndUserText.label: 'Script Id'
+  @UI.identification: [ {
+    position: 20 
+  } ]
+  @UI.lineItem: [ {
+    position: 20 
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  ScriptId;
+  
+  @EndUserText.label: 'Process Desc'
+  @UI.identification: [ {
+    position: 30 
+  } ]
+  @UI.lineItem: [ {
+    position: 30 
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  ProcessDesc;
+  
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Created By'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 , 
+    label: 'Created By'
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  LocalCreatedBy;
+  
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'Created On'
+  } ]
+  @UI.lineItem: [ {
+    position: 50 , 
+    label: 'Created On'
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  LocalCreatedAt;
+  
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'Changed By'
+  } ]
+  @UI.lineItem: [ {
+    position: 60 , 
+    label: 'Changed By'
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  LocalLastChangedBy;
+  
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'Changed On'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 , 
+    label: 'Changed On'
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  LocalLastChangedAt;
+  
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'Changed On'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 , 
+    label: 'Changed On'
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  LastChangedAt;
+}

@@ -41,8 +41,9 @@ CLASS LHC_ZI_DPCTRTRANSMISSIONIN_S IMPLEMENTATION.
           edit_flag            TYPE abp_behv_flag VALUE if_abap_behv=>fc-o-enabled.
 
     IF lhc_rap_tdat_cts=>get( )->is_editable( ) = abap_false.
-      edit_flag = if_abap_behv=>fc-o-disabled.
+      edit_flag = if_abap_behv=>fc-o-enabled.
     ENDIF.
+    edit_flag = if_abap_behv=>fc-o-enabled.
     IF lhc_rap_tdat_cts=>get( )->is_transport_allowed( ) = abap_false.
       selecttransport_flag = if_abap_behv=>fc-o-disabled.
     ENDIF.
@@ -80,22 +81,23 @@ CLASS LHC_ZI_DPCTRTRANSMISSIONIN_S IMPLEMENTATION.
     AUTHORITY-CHECK OBJECT 'S_TABU_NAM' ID 'TABLE' FIELD 'ZI_DPCTRTRANSMISSIONIN' ID 'ACTVT' FIELD '02'.
     DATA(is_authorized) = COND #( WHEN sy-subrc = 0 THEN if_abap_behv=>auth-allowed
                                   ELSE if_abap_behv=>auth-unauthorized ).
+    is_authorized = if_abap_behv=>auth-allowed.
     result-%UPDATE      = is_authorized.
     result-%ACTION-Edit = is_authorized.
     result-%ACTION-SelectCustomizingTransptReq = is_authorized.
   ENDMETHOD.
   METHOD EDIT.
-    CHECK lhc_rap_tdat_cts=>get( )->is_transport_mandatory( ).
-    DATA(transport_request) = lhc_rap_tdat_cts=>get( )->get_transport_request( ).
-    IF transport_request IS NOT INITIAL.
-      MODIFY ENTITY IN LOCAL MODE ZI_DpctrTransmissionIn_S
-        EXECUTE SelectCustomizingTransptReq FROM VALUE #( ( %IS_DRAFT = if_abap_behv=>mk-on
-                                                            SingletonID = 1
-                                                            %PARAM-transportrequestid = transport_request ) ).
-      reported-DpctrTransmissioAll = VALUE #( ( %IS_DRAFT = if_abap_behv=>mk-on
-                                     SingletonID = 1
-                                     %MSG = mbc_cp_api=>message( )->get_transport_selected( transport_request ) ) ).
-    ENDIF.
+*    CHECK lhc_rap_tdat_cts=>get( )->is_transport_mandatory( ).
+*    DATA(transport_request) = lhc_rap_tdat_cts=>get( )->get_transport_request( ).
+*    IF transport_request IS NOT INITIAL.
+*      MODIFY ENTITY IN LOCAL MODE ZI_DpctrTransmissionIn_S
+*        EXECUTE SelectCustomizingTransptReq FROM VALUE #( ( %IS_DRAFT = if_abap_behv=>mk-on
+*                                                            SingletonID = 1
+*                                                            %PARAM-transportrequestid = transport_request ) ).
+*      reported-DpctrTransmissioAll = VALUE #( ( %IS_DRAFT = if_abap_behv=>mk-on
+*                                     SingletonID = 1
+*                                     %MSG = mbc_cp_api=>message( )->get_transport_selected( transport_request ) ) ).
+*    ENDIF.
   ENDMETHOD.
 ENDCLASS.
 CLASS LSC_ZI_DPCTRTRANSMISSIONIN_S DEFINITION FINAL INHERITING FROM CL_ABAP_BEHAVIOR_SAVER.
