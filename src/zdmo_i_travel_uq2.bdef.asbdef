@@ -1,5 +1,6 @@
 unmanaged implementation in class zbp_dmo_i_travel_uq2 unique;
-strict ( 2 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+strict ( 2 );
+ //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
 
 define behavior for ZDMO_I_TRAVEL_UQ2 //alias <alias_name>
 //late numbering
